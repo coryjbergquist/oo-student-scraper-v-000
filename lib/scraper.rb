@@ -57,7 +57,7 @@ class Scraper
 
    #--GETS BLOG, QUOTE, BIO --
 
-    info_area.each do |x|
+    main_wrapper.each do |x|
       if x.css(".vitals-container .social-icon-container a")[3]["href"].include?("http")
         profile_hash[:blog] = x.css(".vitals-container .social-icon-container a")[3]["href"]
       end
