@@ -31,13 +31,13 @@ class Scraper
     # profile_hash[:bio] = []
     html = open(profile_url)
     doc = Nokogiri::HTML(html)
-    info_area = doc.css(".main-wrapper")
+    main_wrapper = doc.css(".main-wrapper")
 
       # --GETS ALL SOCIAL MEDIA LINKS--
 
       links_array = []
       social_media_links = {}
-       info_area.each do |x|
+       main_wrapper.each do |x|
         space = x.css(".vitals-container .social-icon-container a")
       space.each do |x|
       links_array << x["href"]
